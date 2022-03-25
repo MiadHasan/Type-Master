@@ -1,0 +1,11 @@
+export const RESET = 'RESET';
+export const FETCH = 'FETCH';
+export const UPDATE_INPUT = 'UPDATE_INPUT';
+export const INCREMENT_MISTAKE = 'INCREMENT_MISTAKE';
+export const CREATE_USER = 'CREATE_USER';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const ERROR = 'ERROR';
+export const CHECK_AUTH_STATE = 'CHECK_AUTH_STATE';
+export const UPDATE_STATES = 'UPDATE_STATES';
+export const GET_STATES = 'GET_STATES';
