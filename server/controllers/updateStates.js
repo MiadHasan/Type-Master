@@ -6,8 +6,8 @@ export const updateStates = async (req, res) => {
     const user = await User.findOne({email: req.body.email}).exec();
     console.log(user);
     const newTotal = user.total + 1;
-    const newWpm = Math.ceil(user.wpm * user.total / newTotal + req.body.wpm / newTotal);
-    const newAccuracy = Math.ceil(user.accuracy * user.total / newTotal + req.body.accuracy / newTotal);
+    const newWpm = Math.ceil((user.wpm * user.total + req.body.wpm) / newTotal);
+    const newAccuracy = Math.ceil((user.accuracy * user.total + req.body.accuracy) / newTotal);
     const newBest = user.best > req.body.wpm ? user.best : req.body.wpm
     const updatedStates = await User.findByIdAndUpdate(user._id, {wpm: newWpm, total: newTotal, accuracy: newAccuracy, best: newBest}, {new: true});
 

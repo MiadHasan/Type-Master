@@ -23,6 +23,7 @@ const Timer = () => {
     start();
   } else if (isRunning && text === value) {
     pause();
+
     if (isAuthinticated) {
       const states = {
         email,

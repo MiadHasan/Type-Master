@@ -39,7 +39,9 @@ const Text = () => {
     }
 
     useEffect(() => {
+        dispatch(resetTimer(true));
         dispatch(fetchText());
+        dispatch(updateInput(''));
     }, [dispatch]);
 
     const handleChange = (e) => {

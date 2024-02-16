@@ -1,14 +1,12 @@
-import axios from 'axios';
-
+import * as api from '../../api/index';
 import * as actionTypes from './actionTypes';
 
 export const fetchText = () => async (dispatch) => {
   try {
     dispatch({type: actionTypes.FETCH, payload: ''})
-    const {data} = await axios.get('http://api.quotable.io/random?minLength=100')
+    const {data} = await api.getText();
 
-    // dispatch({type: actionTypes.RESET, payload: false})
-    dispatch({type: actionTypes.FETCH, payload: data.content})
+    dispatch({type: actionTypes.FETCH, payload: data})
   } catch (error) {
     console.log(error);
   }
